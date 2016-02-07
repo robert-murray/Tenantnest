@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @outgoing_rating.tenant_id %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @outgoing_rating.agent_id %>
+</p>
+
+<p>
+  <strong>Lease holder:</strong>
+  <%= @outgoing_rating.lease_holder %>
+</p>
+
+<p>
+  <strong>Rent amount:</strong>
+  <%= @outgoing_rating.rent_amount %>
+</p>
+
+<p>
+  <strong>Rent frequency:</strong>
+  <%= @outgoing_rating.rent_frequency %>
+</p>
+
+<p>
+  <strong>Rent arrears:</strong>
+  <%= @outgoing_rating.rent_arrears %>
+</p>
+
+<p>
+  <strong>Rent arrears remedied:</strong>
+  <%= @outgoing_rating.rent_arrears_remedied %>
+</p>
+
+<p>
+  <strong>Nrt received:</strong>
+  <%= @outgoing_rating.nrt_received %>
+</p>
+
+<p>
+  <strong>Nrt reason:</strong>
+  <%= @outgoing_rating.nrt_reason %>
+</p>
+
+<p>
+  <strong>Inspection periodic:</strong>
+  <%= @outgoing_rating.inspection_periodic %>
+</p>
+
+<p>
+  <strong>Inspection clean:</strong>
+  <%= @outgoing_rating.inspection_clean %>
+</p>
+
+<p>
+  <strong>Inspection pets:</strong>
+  <%= @outgoing_rating.inspection_pets %>
+</p>
+
+<p>
+  <strong>Inspection dammage:</strong>
+  <%= @outgoing_rating.inspection_dammage %>
+</p>
+
+<p>
+  <strong>Inspection dammage comment:</strong>
+  <%= @outgoing_rating.inspection_dammage_comment %>
+</p>
+
+<p>
+  <strong>Neighbor complaints:</strong>
+  <%= @outgoing_rating.neighbor_complaints %>
+</p>
+
+<p>
+  <strong>Neighbor complaints comment:</strong>
+  <%= @outgoing_rating.neighbor_complaints_comment %>
+</p>
+
+<p>
+  <strong>Bond refunded:</strong>
+  <%= @outgoing_rating.bond_refunded %>
+</p>
+
+<p>
+  <strong>Bond refunded comment:</strong>
+  <%= @outgoing_rating.bond_refunded_comment %>
+</p>
+
+<p>
+  <strong>Tenancy terminated:</strong>
+  <%= @outgoing_rating.tenancy_terminated %>
+</p>
+
+<p>
+  <strong>Tenancy terminated by:</strong>
+  <%= @outgoing_rating.tenancy_terminated_by %>
+</p>
+
+<p>
+  <strong>Tenancy terminated comment:</strong>
+  <%= @outgoing_rating.tenancy_terminated_comment %>
+</p>
+
+<%= link_to 'Edit', edit_outgoing_rating_path(@outgoing_rating) %> |
+<%= link_to 'Back', outgoing_ratings_path %>

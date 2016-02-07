@@ -1,0 +1,2 @@
+module OutgoingRatingsHelper
+end

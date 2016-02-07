@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @lease.agent_id %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @lease.tenant_id %>
+</p>
+
+<p>
+  <strong>Address street:</strong>
+  <%= @lease.address_street %>
+</p>
+
+<p>
+  <strong>Address suburb:</strong>
+  <%= @lease.address_suburb %>
+</p>
+
+<p>
+  <strong>Address postcode:</strong>
+  <%= @lease.address_postcode %>
+</p>
+
+<p>
+  <strong>Address state:</strong>
+  <%= @lease.address_state %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @lease.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @lease.end_date %>
+</p>
+
+<p>
+  <strong>Currently active:</strong>
+  <%= @lease.currently_active %>
+</p>
+
+<%= link_to 'Edit', edit_lease_path(@lease) %> |
+<%= link_to 'Back', leases_path %>
