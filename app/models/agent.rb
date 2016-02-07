@@ -13,7 +13,6 @@
 #
 
 class Agent < ActiveRecord::Base
-  attr_accessor :password, :password_confirmation
   has_secure_password
   has_many :leases
   has_many :tenants, through: :leases

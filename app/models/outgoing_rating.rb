@@ -28,5 +28,5 @@
 
 class OutgoingRating < ActiveRecord::Base
   belongs_to :lease
-  has_and_belongs_to_many :tenants
+  has_many :tenants, through: :leases
 end
