@@ -1,0 +1,2 @@
+module AgentDashHelper
+end

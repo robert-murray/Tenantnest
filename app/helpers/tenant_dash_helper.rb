@@ -1,0 +1,2 @@
+module TenantDashHelper
+end

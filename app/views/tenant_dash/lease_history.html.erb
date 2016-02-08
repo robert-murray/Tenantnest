@@ -1,0 +1,15 @@
+<h3>Welcome <%= @current_user.first_name %></h3>
+<h1>Your lease history</h1>
+
+<hr>
+
+<% @current_user.leases.each do |lease| %>
+  <h5><%= lease.address_street %>. <%= lease.address_suburb %>, <%= lease.address_state %></h5>
+  <p>Lease period: <%= lease.start_date.strftime '%B %e, %Y' %> to <%= lease.end_date.strftime '%B %e, %Y' %></p>
+<% end %>
+
+<hr>
+
+<% if @current_user.present? %>
+  <%= link_to 'Logout', logout_path, method: :delete, :class => 'button' %>
+<% end %>
