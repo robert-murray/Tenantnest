@@ -4,6 +4,10 @@
   position: fixed;
 }
 
+.cbp-spmenu .fa {
+  width: 25px;
+}
+
 .cbp-spmenu h3 {
   color: #afdefa;
   font-size: 1.9em;

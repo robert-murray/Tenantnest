@@ -3,7 +3,3 @@
 <p>This is the agent dashboard</p>
 
 <hr>
-
-<% if @current_user.present? %>
-  <%= link_to 'Logout', logout_path, method: :delete, :class => 'button' %>
-<% end %>

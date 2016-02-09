@@ -1,0 +1,7 @@
+<a href="#"><i class="fa fa-user fa-lg"></i> My Details</a>
+<a href="#"><i class="fa fa-clipboard fa-lg"></i> Review Requests</a>
+<a href="#"><i class="fa fa-sign-out fa-lg"></i> logout</a>
+
+<%= link_to 'Logout', logout_path, method: :delete, :class => 'button' %>
+
+<%= link_to (‘<i class=“fa fa-thumbs-up fa-lg”> </i>’).html_safe, vote_path(@image)%>
