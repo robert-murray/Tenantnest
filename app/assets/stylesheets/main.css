@@ -6,7 +6,7 @@
  * Licensed under the MIT license
 */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Sniglet);
 
 html {
   box-sizing: border-box;
@@ -16,7 +16,8 @@ html {
 }
 
 body {
-  color: rgba(67, 74, 84, 1.0);
+  color: #FFF;
+  background-color: rgba(40, 50, 62, 1.0);
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.65em;
   font-weight: 400;
@@ -84,7 +85,7 @@ input[type='submit'] {
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   transition: all 0.5s ease;
 }
@@ -690,7 +691,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Sniglet", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   margin-bottom: 2rem;
   margin-top: 0;

@@ -2,20 +2,19 @@
 <html>
 <head>
   <title>Tenantnest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-  <body class="cbp-spmenu-push">
-    <div class="topNav"><span id="showLeftPush">MENU <i class="fa fa-arrow-circle-right"></i></span></div>
-    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-      <h3>Menu</h3>
+  <body class="spmenu-push">
+    <div class="topNav"><span id="showLeftPush"><i class="fa fa-bars"></i> MENU</span></div>
+    <nav class="spmenu spmenu-vertical spmenu-left" id="spmenu-s1">
+      <h3>Hi <%= @current_user.first_name %></h3>
       <%= render 'menu' %>
     </nav>
     <div class="container">
       <%= yield %>
     </div>
-
-<h6>p.s. this is the dashboard layout</h6>
 </body>
 </html>

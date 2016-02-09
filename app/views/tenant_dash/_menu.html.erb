@@ -1,6 +1,4 @@
-<a href="#">Celery seakale</a>
-<a href="#">Dulse daikon</a>
-<a href="#">Zucchini garlic</a>
-<a href="#">Catsear azuki bean</a>
-<a href="#">Dandelion bunya</a>
-<a href="#">Rutabaga</a>
+<%= link_to '<i class="fa fa-home fa-lg"></i> My Lease History'.html_safe, tenant_dash_lease_history_path %>
+<%= link_to '<i class="fa fa-user fa-lg"></i> My Details'.html_safe, tenant_dash_my_details_path %>
+<%= link_to '<i class="fa fa-external-link-square fa-lg"></i> My profile'.html_safe, tenant_dash_profile_link_path %>
+<%= link_to '<i class="fa fa-sign-out fa-lg"></i> Logout'.html_safe, logout_path, method: :delete %>

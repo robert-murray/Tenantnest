@@ -1,2 +1,37 @@
-<h1>TenantDash#my_details</h1>
-<p>Find me in app/views/tenant_dash/my_details.html.erb</p>
+<%= form_for(@current_user) do |f| %>
+  <% if @current_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@current_user.errors.count, "error") %> prohibited this tenant from being saved:</h2>
+
+      <ul>
+      <% @current_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
