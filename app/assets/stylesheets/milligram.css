@@ -28,7 +28,26 @@ body {
 *,
 *:after,
 *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.topNav {
+  display: table;
+  width: 100%;
+  min-height: 60px;
+  background-color: #47a3da;
+  color: #FFF;
+  text-align: left;
+}
+
+.topNav span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.2em;
+  padding: 0 17px;
+  font-weight: 700;
 }
 
 blockquote {
