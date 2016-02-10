@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-6 heading"><h5><%= lease.address_street %>. <%= lease.address_suburb %>, <%= lease.address_state %></h5></div>
     <div class="col-5 details"><p><b>Leased</b> <%= lease.start_date.strftime '%b %Y' %> <b>to </b></p></div>
-    <%= link_to '<div class="col-1 review"><i class="fa fa-pencil fa-lg"></i></div>'.html_safe, agent_dash_new_outgoing_path %>
+    <%= link_to '<div class="col-1 review"><i class="fa fa-pencil fa-lg"></i></div>'.html_safe, agent_dash_new_outgoing_path( :lease_id => lease.id )%>
   </div>
 </div>
 <% end %>

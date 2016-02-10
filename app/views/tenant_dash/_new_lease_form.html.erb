@@ -1,0 +1,53 @@
+<%= form_for(@lease) do |f| %>
+  <% if @lease.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lease.errors.count, "error") %> prohibited this lease from being saved:</h2>
+
+      <ul>
+      <% @lease.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :agent_id %><br>
+    <%= f.number_field :agent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tenant_id %><br>
+    <%= f.number_field :tenant_id %>
+  </div>
+  <div class="field">
+    <%= f.label :address_street %><br>
+    <%= f.text_field :address_street %>
+  </div>
+  <div class="field">
+    <%= f.label :address_suburb %><br>
+    <%= f.text_field :address_suburb %>
+  </div>
+  <div class="field">
+    <%= f.label :address_postcode %><br>
+    <%= f.number_field :address_postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :address_state %><br>
+    <%= f.text_field :address_state %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :currently_active %><br>
+    <%= f.check_box :currently_active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

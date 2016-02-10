@@ -1,8 +1,8 @@
 <%= form_for(@outgoing_rating) do |f| %>
+  <%= hidden_field_tag :lease_id, params[:lease_id] %>
   <% if @outgoing_rating.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@outgoing_rating.errors.count, "error") %> prohibited this outgoing_rating from being saved:</h2>
-
       <ul>
       <% @outgoing_rating.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :lease_id %><br>
-    <%= f.number_field :lease_id %>
-  </div>
-  <div class="field">
     <%= f.label :rent_amount %><br>
     <%= f.number_field :rent_amount %>
   </div>
   <div class="field">
     <%= f.label :rent_frequency %><br>
-    <%= f.text_field :rent_frequency %>
+    <%= f.select :rent_frequency, ['Weekly', 'Monthly'] %>
   </div>
   <div class="field">
     <%= f.label :rent_arrears %><br>

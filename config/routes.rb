@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'tenant_dash/profile_link'
 
+  get 'tenant_dash/new_lease' => 'tenant_dash#new_lease'
+
   root :to => 'session#new'
 
   resources :outgoing_ratings
