@@ -1,5 +1,4 @@
 <%= form_for(@outgoing_rating) do |f| %>
-  <%= hidden_field_tag :lease_id, params[:lease_id] %>
   <% if @outgoing_rating.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@outgoing_rating.errors.count, "error") %> prohibited this outgoing_rating from being saved:</h2>
@@ -11,76 +10,81 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :lease_id, :value => params[:lease_id] %>
+
   <div class="field">
-    <%= f.label :rent_amount %><br>
+    <%= f.label :rent_amount, "Rent amount paid:" %><br>
     <%= f.number_field :rent_amount %>
   </div>
   <div class="field">
-    <%= f.label :rent_frequency %><br>
+    <%= f.label :rent_frequency, "Rent payment frequency:" %><br>
     <%= f.select :rent_frequency, ['Weekly', 'Monthly'] %>
   </div>
   <div class="field">
-    <%= f.label :rent_arrears %><br>
-    <%= f.check_box :rent_arrears %>
+    <%= f.label :rent_arrears, "Was the tenant ever in arrears during the tenancy?" %><br />
+    <%= f.label :rent_arrears, "Yes", :value => "true"  %>
+    <%= f.radio_button :rent_arrears, true %>
+    <%= f.label :rent_arrears, "No", :value => "false" %>
+    <%= f.radio_button :rent_arrears, false, :checked => true %>
   </div>
   <div class="field">
-    <%= f.label :rent_arrears_remedied %><br>
+    <%= f.label :rent_arrears_remedied, "Was the rent in arrears remedied in a reasonable time-frame?" %><br>
     <%= f.check_box :rent_arrears_remedied %>
   </div>
   <div class="field">
-    <%= f.label :nrt_received %><br>
+    <%= f.label :nrt_received, "Did the tenant receive a Notice to Remedy during the tenancy?" %><br>
     <%= f.check_box :nrt_received %>
   </div>
   <div class="field">
-    <%= f.label :nrt_reason %><br>
+    <%= f.label :nrt_reason, "If yes, what was the reason for the notice(s)?" %><br>
     <%= f.text_area :nrt_reason %>
   </div>
   <div class="field">
-    <%= f.label :inspection_periodic %><br>
+    <%= f.label :inspection_periodic, "Were periodic inspections conducted during the tenancy?" %><br>
     <%= f.check_box :inspection_periodic %>
   </div>
   <div class="field">
-    <%= f.label :inspection_clean %><br>
+    <%= f.label :inspection_clean, "Did the tenant leave the property clean and tidy?" %><br>
     <%= f.check_box :inspection_clean %>
   </div>
   <div class="field">
-    <%= f.label :inspection_pets %><br>
+    <%= f.label :inspection_pets, "Were pets kept on the property without permission?" %><br>
     <%= f.check_box :inspection_pets %>
   </div>
   <div class="field">
-    <%= f.label :inspection_dammage %><br>
+    <%= f.label :inspection_dammage, "Was damage noted during the inspections?" %><br>
     <%= f.check_box :inspection_dammage %>
   </div>
   <div class="field">
-    <%= f.label :inspection_dammage_comment %><br>
+    <%= f.label :inspection_dammage_comment, "If yes, what type of damage?" %><br>
     <%= f.text_area :inspection_dammage_comment %>
   </div>
   <div class="field">
-    <%= f.label :neighbor_complaints %><br>
+    <%= f.label :neighbor_complaints, "Were there complaints from neighbours during the tenancy?" %><br>
     <%= f.check_box :neighbor_complaints %>
   </div>
   <div class="field">
-    <%= f.label :neighbor_complaints_comment %><br>
+    <%= f.label :neighbor_complaints_comment, "If yes, please provide details of the complaint(s)" %><br>
     <%= f.text_area :neighbor_complaints_comment %>
   </div>
   <div class="field">
-    <%= f.label :bond_refunded %><br>
+    <%= f.label :bond_refunded, "Was the bond refunded in full?" %><br>
     <%= f.check_box :bond_refunded %>
   </div>
   <div class="field">
-    <%= f.label :bond_refunded_comment %><br>
+    <%= f.label :bond_refunded_comment, "If not, please provide details" %><br>
     <%= f.text_area :bond_refunded_comment %>
   </div>
   <div class="field">
-    <%= f.label :tenancy_terminated %><br>
+    <%= f.label :tenancy_terminated, "Was the lease broken by the tenant or terminated by you?" %><br>
     <%= f.check_box :tenancy_terminated %>
   </div>
   <div class="field">
-    <%= f.label :tenancy_terminated_by %><br>
+    <%= f.label :tenancy_terminated_by, "Who ended the lease?" %><br>
     <%= f.check_box :tenancy_terminated_by %>
   </div>
   <div class="field">
-    <%= f.label :tenancy_terminated_comment %><br>
+    <%= f.label :tenancy_terminated_comment, "Please provide details about the lease ending early" %><br>
     <%= f.text_area :tenancy_terminated_comment %>
   </div>
   <div class="actions">

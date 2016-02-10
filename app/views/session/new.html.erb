@@ -10,7 +10,7 @@
   <%= password_field_tag :password, nil, :required => true %>
 
   <b>I am an:</b>
-  <p><%= radio_button_tag(:user_type, "occupant") %> Occupant <%= radio_button_tag(:user_type, "agent") %> Agent </p>
+  <p><%= radio_button_tag(:user_type, "occupant", :checked => true) %> Occupant <%= radio_button_tag(:user_type, "agent") %> Agent </p>
   <button> Log in <i class="fa fa-sign-in"></i></button>
   <%= link_to 'Sign up', new_tenant_path, :class => 'button button-outline' %>
 

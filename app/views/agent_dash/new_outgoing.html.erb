@@ -1,5 +1,10 @@
-<h1>New Outgoing Rating</h1>
 
+<div class="pageContainer animated fadeInUp">
+<div class="clip"></div>
+<div class="spacer20"></div>
+<h1>New Outgoing Rating - lease id = <%= params[:lease_id] %></h1>
+<h3><%= @selected_lease.address_street %>. <%= @selected_lease.address_suburb %>, <%= @selected_lease.address_state %></h3>
 <%= render 'new_outgoing_form' %>
+</div>
 
-<%= link_to 'Back', agent_dash_review_requests_path, :class => 'button button-clear' %>
+
