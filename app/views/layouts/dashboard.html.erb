@@ -8,7 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
   <body class="spmenu-push">
-    <div class="topNav"><span id="showLeftPush"><i class="fa fa-bars"></i> MENU</span></div>
+    <div class="topNav">
+      <span id="showLeftPush"><i class="fa fa-bars"></i> MENU</span>
+      <span id="showLeftPush"><i class="fa fa-users"></i> TenantNest</span>
+    </div>
     <nav class="spmenu spmenu-vertical spmenu-left" id="spmenu-s1">
       <h3>Hi <%= @current_user.first_name %></h3>
       <%= render 'menu' %>

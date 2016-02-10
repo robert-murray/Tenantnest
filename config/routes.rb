@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'agent_dash/review_requests'
 
+  get 'agent_dash/new_outgoing' => 'agent_dash#new_outgoing'
+
   get 'tenant_dash/my_details'
 
   get 'tenant_dash/lease_history'

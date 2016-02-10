@@ -1,4 +1,9 @@
 /* General styles for all menus */
+
+#showLeftPush{
+  cursor: pointer;
+}
+
 .spmenu {
   background: #258ecd;
   position: fixed;

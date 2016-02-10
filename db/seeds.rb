@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 Tenant.destroy_all
 
 t1 = Tenant.create :first_name => 'Joseph', :last_name => 'Robinson', :phone => '0404456789', :email => 'joseph@email.com',  :password => 'chicken', :password_confirmation => 'chicken'
@@ -19,6 +20,7 @@ t8 = Tenant.create :first_name => 'Frances', :last_name => 'White', :phone => '0
 t9 = Tenant.create :first_name => 'Lillian', :last_name => 'Collins', :phone => '0404456789', :email => 'lillian@email.com',  :password => 'chicken', :password_confirmation => 'chicken'
 t10 = Tenant.create :first_name => 'Laura', :last_name => 'Stewart', :phone => '0404456789', :email => 'laura@email.com',  :password => 'chicken', :password_confirmation => 'chicken'
 
+
 Agent.destroy_all
 
 a1 = Agent.create :first_name => 'Margaret', :last_name => 'Bailey', :phone => '0404456789', :email => 'margaret@email.com', :password => 'chicken', :password_confirmation => 'chicken'
@@ -27,11 +29,44 @@ a3 = Agent.create :first_name => 'Lawrence', :last_name => 'Morris', :phone => '
 a4 = Agent.create :first_name => 'Victor', :last_name => 'Clark', :phone => '0404456789', :email => 'victor@email.com', :password => 'chicken', :password_confirmation => 'chicken'
 a5 = Agent.create :first_name => 'Angela', :last_name => 'Cooper', :phone => '0404456789', :email => 'angela@email.com', :password => 'chicken', :password_confirmation => 'chicken'
 
+
 Lease.destroy_all
 
-l1 = Lease.create :address_street => '601 Bourke St', :address_suburb => 'Surry Hills', :address_postcode => '2010', :address_state => 'NSW', :start_date => '2014-02-01', :end_date => '2015-02-01', :currently_active => false
-l2 = Lease.create :address_street => '1 Cook St', :address_suburb => 'Glebe', :address_postcode => '2037', :address_state => 'NSW', :start_date => '2015-02-01', :end_date => '2016-02-01', :currently_active => false
-l3 = Lease.create :address_street => '179 Abercrombie St', :address_suburb => 'Redfern', :address_postcode => '2008', :address_state => 'NSW', :start_date => '2015-02-01', :currently_active => true
+l1 = Lease.create :address_street => '601 Bourke St', 
+  :address_suburb => 'Surry Hills', 
+  :address_postcode => '2010', 
+  :address_state => 'NSW', 
+  :start_date => '2014-02-01', 
+  :end_date => '2015-02-01', 
+  :currently_active => false, 
+  :rated => true
+
+l2 = Lease.create :address_street => '1 Cook St', 
+  :address_suburb => 'Glebe', 
+  :address_postcode => '2037', 
+  :address_state => 'NSW', 
+  :start_date => '2015-02-01', 
+  :end_date => '2016-02-01', 
+  :currently_active => false, 
+  :rated => true
+
+l3 = Lease.create :address_street => '179 Abercrombie St', 
+  :address_suburb => 'Redfern', 
+  :address_postcode => '2008', 
+  :address_state => 'NSW', 
+  :start_date => '2016-02-01', 
+  :currently_active => true, 
+  :rated => false
+
+l4 = Lease.create :address_street => '17 Brumby St', 
+  :address_suburb => 'Surry Hills', 
+  :address_postcode => '2010', 
+  :address_state => 'NSW', 
+  :start_date => '2013-11-01', 
+  :end_date => '2015-01-01', 
+  :currently_active => false, 
+  :rated => false
+
 
 OutgoingRating.destroy_all
 
@@ -71,14 +106,19 @@ or2 = OutgoingRating.create :rent_amount => '900',
   :tenancy_terminated_by => 'null', 
   :tenancy_terminated_comment => 'null'
 
+
 or1.update_attribute :lease, l1
 or2.update_attribute :lease, l2
 
 l1.update_attribute :agent, a1
 l2.update_attribute :agent, a2
+l3.update_attribute :agent, a2
+l4.update_attribute :agent, a2
 
 t1.leases << l1
 t2.leases << l2
+t2.leases << l3
+t2.leases << l4
 
 
 

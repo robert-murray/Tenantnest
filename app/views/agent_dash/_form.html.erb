@@ -1,0 +1,93 @@
+<%= form_for(@outgoing_rating) do |f| %>
+  <% if @outgoing_rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@outgoing_rating.errors.count, "error") %> prohibited this outgoing_rating from being saved:</h2>
+
+      <ul>
+      <% @outgoing_rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lease_id %><br>
+    <%= f.number_field :lease_id %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_amount %><br>
+    <%= f.number_field :rent_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_frequency %><br>
+    <%= f.text_field :rent_frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_arrears %><br>
+    <%= f.check_box :rent_arrears %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_arrears_remedied %><br>
+    <%= f.check_box :rent_arrears_remedied %>
+  </div>
+  <div class="field">
+    <%= f.label :nrt_received %><br>
+    <%= f.check_box :nrt_received %>
+  </div>
+  <div class="field">
+    <%= f.label :nrt_reason %><br>
+    <%= f.text_area :nrt_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :inspection_periodic %><br>
+    <%= f.check_box :inspection_periodic %>
+  </div>
+  <div class="field">
+    <%= f.label :inspection_clean %><br>
+    <%= f.check_box :inspection_clean %>
+  </div>
+  <div class="field">
+    <%= f.label :inspection_pets %><br>
+    <%= f.check_box :inspection_pets %>
+  </div>
+  <div class="field">
+    <%= f.label :inspection_dammage %><br>
+    <%= f.check_box :inspection_dammage %>
+  </div>
+  <div class="field">
+    <%= f.label :inspection_dammage_comment %><br>
+    <%= f.text_area :inspection_dammage_comment %>
+  </div>
+  <div class="field">
+    <%= f.label :neighbor_complaints %><br>
+    <%= f.check_box :neighbor_complaints %>
+  </div>
+  <div class="field">
+    <%= f.label :neighbor_complaints_comment %><br>
+    <%= f.text_area :neighbor_complaints_comment %>
+  </div>
+  <div class="field">
+    <%= f.label :bond_refunded %><br>
+    <%= f.check_box :bond_refunded %>
+  </div>
+  <div class="field">
+    <%= f.label :bond_refunded_comment %><br>
+    <%= f.text_area :bond_refunded_comment %>
+  </div>
+  <div class="field">
+    <%= f.label :tenancy_terminated %><br>
+    <%= f.check_box :tenancy_terminated %>
+  </div>
+  <div class="field">
+    <%= f.label :tenancy_terminated_by %><br>
+    <%= f.check_box :tenancy_terminated_by %>
+  </div>
+  <div class="field">
+    <%= f.label :tenancy_terminated_comment %><br>
+    <%= f.text_area :tenancy_terminated_comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

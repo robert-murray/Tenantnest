@@ -6,16 +6,21 @@
     <div class="tmicon"><i class="fa fa-home"></i></div>
     <div class="tmlabel">
       <h5>Add new lease</h5>
-      <p>dskjglfk</p>
     </div>
   </li>
-<% @current_user.leases.each do |lease| %>
+<% @current_user.leases.order(:end_date).reverse.each do |lease| %>
   <li>
-    <time class="tmtime"><span>From <%= lease.start_date.strftime '%b %Y' %></span> <span>To <%= lease.end_date.strftime '%b %Y' %></span></time>
+    <time class="tmtime"><span>From <%= lease.start_date.strftime '%b %Y' %></span> 
+      <% if !!lease.end_date %>
+        <span>To <%= lease.end_date.strftime '%b %Y' %></span>
+      <% else %>
+        <span>Current</span>
+      <% end %>
+    </time>
     <div class="tmicon"><i class="fa fa-home"></i></div>
     <div class="tmlabel">
       <h5><%= lease.address_street %>. <%= lease.address_suburb %>, <%= lease.address_state %></h5>
-      <p>Lease period: <%= lease.start_date.strftime '%b %Y' %> to <%= lease.end_date.strftime '%b %Y' %></p>
+      <p>Some text here</p>
     </div>
   </li>
 <% end %>
@@ -23,8 +28,7 @@
     <time class="tmtime"></time>
     <div class="tmicon"><i class="fa fa-home"></i></div>
     <div class="tmlabel">
-      <h5>Add your past leases</h5>
-      <p>dskjglfk</p>
+      <h5>Add a past leases</h5>
     </div>
   </li>
 </ul>

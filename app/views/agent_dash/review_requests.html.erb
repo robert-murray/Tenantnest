@@ -1,2 +1,11 @@
-<h1>AgentDash#review_requests</h1>
-<p>Find me in app/views/agent_dash/review_requests.html.erb</p>
+<h1><span class="ellipsed"><%=@requests.count%></span>Review Requests</h1>
+
+<% @requests.each do |lease| %>
+ <div class="grid grid-fluid lease-tiles"> 
+  <div class="row">
+    <div class="col-6 heading"><h5><%= lease.address_street %>. <%= lease.address_suburb %>, <%= lease.address_state %></h5></div>
+    <div class="col-5 details"><p><b>Leased</b> <%= lease.start_date.strftime '%b %Y' %> <b>to </b></p></div>
+    <%= link_to '<div class="col-1 review"><i class="fa fa-pencil fa-lg"></i></div>'.html_safe, agent_dash_new_outgoing_path %>
+  </div>
+</div>
+<% end %>

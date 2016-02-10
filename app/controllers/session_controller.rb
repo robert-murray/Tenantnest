@@ -17,7 +17,7 @@ class SessionController < ApplicationController
       agent = Agent.find_by :email => params[:email]
       if agent.present? && agent.authenticate(params[:password])
         session[:agent_id] = agent.id
-        redirect_to agent_dash_my_details_path
+        redirect_to agent_dash_review_requests_path
       else
         flash[:error] = 'Invalid login'
         redirect_to login_path
