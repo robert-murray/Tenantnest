@@ -15,9 +15,9 @@ body {
   line-height: 1.70;
   margin: 0;
   text-align: center;
-  background-image: url("");
-  background-image: asset-url("/assets/town.png", image)
-  background-repeat: repeat-x;
+  background: asset-url("/assets/town.png", image)
+    repeat-x
+    center bottom;
   min-height: 100vh;
   background-color: rgba(40, 50, 62, 1.0);
 }
