@@ -16,11 +16,11 @@ class AgentDashController < ApplicationController
 
   def create
     @outgoing_rating = OutgoingRating.new(outgoing_rating_params)
-
+    @selected_lease = Lease.find_by :id => @outgoing_rating.lease_id
 
     respond_to do |format|
       if @outgoing_rating.save
-        Lease.update(params[:lease_id], :rated => true)
+        @selected_lease.update(:rated => true)
         format.html { redirect_to outgoing_ratings_path, notice: 'Outgoing rating was successfully created.' }
         format.json { render outgoing_ratings_path, status: :created, location: @outgoing_rating }
       else
