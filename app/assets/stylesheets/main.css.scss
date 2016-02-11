@@ -1052,9 +1052,9 @@ input[type='submit'] {
 }
 
 .clip {
-  background-image: asset-url("/assets/cliptop.svg", image)
-  background-position: center;
-  background-repeat: no-repeat;
+  background: asset-url("/assets/cliptop.svg", image)
+    no-repeat
+    center;
   position: absolute;
   left: 0;
   top: -70px;
