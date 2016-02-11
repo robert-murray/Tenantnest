@@ -5,7 +5,7 @@
     <time class="tmtime"></time>
     <div class="tmicon"><i class="fa fa-home"></i></div>
     <div class="tmlabel">
-      <%= link_to '<h5><i class="fa fa-plus-square fa-lg"></i> Add a new lease</h5>'.html_safe, tenant_dash_new_lease_path %>
+      <%= link_to '<h5><i class="fa fa-plus-square fa-lg"></i> Add a new lease</h5>'.html_safe, tenant_dash_new_lease_path( :type => 'new' ) %>
     </div>
   </li>
 <% @current_user.leases.order(:end_date).reverse.each do |lease| %>
@@ -28,7 +28,7 @@
     <time class="tmtime"></time>
     <div class="tmicon"><i class="fa fa-home"></i></div>
     <div class="tmlabel">
-      <%= link_to '<h5><i class="fa fa-plus-square fa-lg"></i> Add past lease</h5>'.html_safe, tenant_dash_new_lease_path %>
+      <%= link_to '<h5><i class="fa fa-plus-square fa-lg"></i> Add past lease</h5>'.html_safe, tenant_dash_new_lease_path( :type => 'past' )%>
     </div>
   </li>
 </ul>

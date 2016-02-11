@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'tenant_dash/profile_link'
 
   get 'tenant_dash/new_lease' => 'tenant_dash#new_lease'
-  post 'agent_dash/new_outgoing' => 'tenant_dash#create', :as => "new_lease"
+  post 'tenant_dash/new_lease' => 'tenant_dash#create', :as => "new_lease"
 
   root :to => 'session#new'
 

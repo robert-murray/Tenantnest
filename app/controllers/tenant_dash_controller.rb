@@ -12,6 +12,7 @@ class TenantDashController < ApplicationController
   end
 
   def new_lease
+    @last_lease = @current_user.leases.where(currently_active: true).order(:end_date).take
     @lease = Lease.new
   end
 
@@ -20,8 +21,8 @@ class TenantDashController < ApplicationController
 
     respond_to do |format|
       if @lease.save
-        format.html { redirect_to leases_path, notice: 'New lease was successfully created.' }
-        format.json { render leases_path, status: :created, location: @lease }
+        format.html { redirect_to tenant_dash_lease_history_path, notice: 'New lease was successfully created.' }
+        format.json { render tenant_dash_lease_history_path, status: :created, location: @lease }
       else
         format.html { render :new }
         format.json { render json: @lease.errors, status: :unprocessable_entity }
