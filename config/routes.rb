@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'agent_dash/review_requests'
 
   get 'agent_dash/new_outgoing' => 'agent_dash#new_outgoing'
+  post 'agent_dash/new_outgoing' => 'agent_dash#create', :as => "new_outgoing"
 
   get 'tenant_dash/my_details'
 

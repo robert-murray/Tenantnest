@@ -16,9 +16,11 @@ class AgentDashController < ApplicationController
 
   def create
     @outgoing_rating = OutgoingRating.new(outgoing_rating_params)
-    @lease_id = params[:lease_id]
+
+
     respond_to do |format|
       if @outgoing_rating.save
+        Lease.update(params[:lease_id], :rated => true)
         format.html { redirect_to outgoing_ratings_path, notice: 'Outgoing rating was successfully created.' }
         format.json { render outgoing_ratings_path, status: :created, location: @outgoing_rating }
       else
@@ -35,6 +37,6 @@ class AgentDashController < ApplicationController
     end
 
     def outgoing_rating_params
-      params.require(:outgoing_rating).permit(:rent_amount, :rent_frequency, :rent_arrears, :rent_arrears_remedied, :nrt_received, :nrt_reason, :inspection_periodic, :inspection_clean, :inspection_pets, :inspection_dammage, :inspection_dammage_comment, :neighbor_complaints, :neighbor_complaints_comment, :bond_refunded, :bond_refunded_comment, :tenancy_terminated, :tenancy_terminated_by, :tenancy_terminated_comment).merge(:lease_id)
+      params.require(:outgoing_rating).permit(:rent_amount, :rent_frequency, :rent_arrears, :rent_arrears_remedied, :nrt_received, :nrt_reason, :inspection_periodic, :inspection_clean, :inspection_pets, :inspection_dammage, :inspection_dammage_comment, :neighbor_complaints, :neighbor_complaints_comment, :bond_refunded, :bond_refunded_comment, :tenancy_terminated, :tenancy_terminated_by, :tenancy_terminated_comment, :lease_id)
     end
 end
