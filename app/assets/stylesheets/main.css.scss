@@ -472,7 +472,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #606c76;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 dl,
@@ -881,8 +881,7 @@ h6 {
 }
 
 a {
-  color: rgba(67, 74, 84, 1.0);
-  background-color: rgba(183, 190, 196, 0.149);
+  color: #FFF;
 } 
 
 .button, 

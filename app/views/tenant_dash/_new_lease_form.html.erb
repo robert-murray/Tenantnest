@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :agent_id %><br>
-    <%= f.number_field :agent_id %>
+    <%= f.select :agent_id, Agent.all.map { |a| [a.first_name + " " + a.last_name, a.id] }, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :address_street %><br>

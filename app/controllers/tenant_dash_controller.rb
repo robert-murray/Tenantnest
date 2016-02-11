@@ -15,6 +15,20 @@ class TenantDashController < ApplicationController
     @lease = Lease.new
   end
 
+  def create
+    @lease = Lease.new(lease_params)
+
+    respond_to do |format|
+      if @lease.save
+        format.html { redirect_to leases_path, notice: 'New lease was successfully created.' }
+        format.json { render leases_path, status: :created, location: @lease }
+      else
+        format.html { render :new }
+        format.json { render json: @lease.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   private
       def lease_params
