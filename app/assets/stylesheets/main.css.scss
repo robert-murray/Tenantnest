@@ -15,8 +15,8 @@ body {
   line-height: 1.70;
   margin: 0;
   text-align: center;
-  background-image: url("/assets/town.png");
-  background-position: center bottom;
+  background-image: url("");
+  background-image: asset-url("/assets/town.png", image)
   background-repeat: repeat-x;
   min-height: 100vh;
   background-color: rgba(40, 50, 62, 1.0);
@@ -1052,7 +1052,7 @@ input[type='submit'] {
 }
 
 .clip {
-  background-image: url("/assets/cliptop.svg");
+  background-image: asset-url("/assets/cliptop.svg", image)
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
