@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Sniglet);
+@import url(//fonts.googleapis.com/css?family=Lato:400,700|Sniglet);
 
 html {
   box-sizing: border-box;
@@ -15,7 +15,7 @@ body {
   line-height: 1.70;
   margin: 0;
   text-align: center;
-  background: asset-url("/assets/town.png")
+  background: image-url("town.png")
     repeat-x
     center bottom;
   min-height: 100vh;
@@ -1011,24 +1011,6 @@ input[type='submit'] {
   padding: 1rem 0;
 }
 
-.imageBG1 {
-  background:
-    linear-gradient(rgba(67, 74, 84, 0.7), rgba(67, 74, 84, 0.7)),
-    url('https://images.unsplash.com/photo-1440964829947-ca3277bd37f8')
-    no-repeat
-    center / cover
-    fixed;
-}
-
-.imageBG2 {
-  padding-top: 40px;
-  background:
-    linear-gradient(rgba(47, 52, 59, 0.6), rgba(47, 52, 59, 0.6)),
-    url('https://images.unsplash.com/32/90PZOijCSquhzM1A3cq8_photo.JPG')
-    no-repeat
-    center / cover
-    }
-
 .underSection {
   padding-bottom: 150px;
 }
@@ -1052,7 +1034,7 @@ input[type='submit'] {
 }
 
 .clip {
-  background: asset-url("/assets/cliptop.svg")
+  background: image-url("cliptop.svg")
     no-repeat
     center;
   position: absolute;
