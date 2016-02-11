@@ -15,7 +15,7 @@ body {
   line-height: 1.70;
   margin: 0;
   text-align: center;
-  background: asset-url("/assets/town.png", image)
+  background: asset-url("/assets/town.png")
     repeat-x
     center bottom;
   min-height: 100vh;
@@ -1052,7 +1052,7 @@ input[type='submit'] {
 }
 
 .clip {
-  background: asset-url("/assets/cliptop.svg", image)
+  background: asset-url("/assets/cliptop.svg")
     no-repeat
     center;
   position: absolute;
